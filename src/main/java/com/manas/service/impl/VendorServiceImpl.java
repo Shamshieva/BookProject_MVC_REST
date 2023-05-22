@@ -52,12 +52,12 @@ public class VendorServiceImpl implements VendorService {
         vendorRepository.save(vendor1);
     }
 
-    @Override
-    public List<Vendor> getAllVendors(String keyWord) {
-        if (keyWord != null && !keyWord.trim().isEmpty()){
-            return vendorRepository.search("%" + keyWord + "%");
-        } else {
-            return vendorRepository.findAll();
-        }
-    }
+//    @Override
+//    public List<Vendor> getAllVendors(String keyWord) {
+//        if (keyWord != null && !keyWord.trim().isEmpty()){
+//            return vendorRepository.search("%" + keyWord + "%");
+//        } else {
+//            return vendorRepository.findAll();
+//        }
+//    }
 }

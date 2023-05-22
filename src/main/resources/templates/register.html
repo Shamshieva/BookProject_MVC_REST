@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlJpx6sV3-6xPsF-HiNC2dlYFAE1TLFUrqjw&usqp=CAU ) no-repeat;
+    /*background: url(https://png.pngtree.com/thumb_back/fh260/background/20210224/pngtree-blue-abstract-background-business-image_564246.jpg) no-repeat;*/
+    background-size: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .navbar {
+    margin-bottom: 50px;
+    background-color: #66b0ff;
+    font-size: 30px;
+    font-weight: bold;
+
+  }
+  .form-container {
+    background: #66b0ff;
+    font-family: 'Nunito', sans-serif;
+    padding: 80px 50px;
+    border-radius: 20px;
+
+  }
+  .register{
+    text-align: center;
+    color: #C0F2D8;
+    font-weight: bold;
+    margin: -20px 0 40px 0;
+
+  }
+  button {
+    background-color: #C0F2D8 !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    border-radius: 20px !important;
+    padding: 5px 30px !important;
+  }
+  .form-group {
+    margin: 0 0 25px 0;
+  }
+  .form-control {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 30px;
+    box-shadow: none;
+    padding: 0 20px 0 45px;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+  }
+  .registered {
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    margin-top: 20px;
+  }
+</style>
+
+<body>
+
+<div class="wrapper">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Manas</span>
+    </div>
+  </nav>
+  <div class="d-flex justify-content-end col-md-5 col-md-offset-5">
+    <div th:if="${param.success}">
+      <div class="alert alert-info" role="alert">You've successfully registered to our awesome app!</div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="form-container">
+        <h4 class="register">REGISTRATION FORM</h4>
+        <form th:action="@{/registration}" method="post" th:object="${user}">
+          <div class="form-group">
+            <input id="firstName" class="form-control" placeholder="Name" th:field="*{name}" required autofocus="autofocus"/>
+          </div>
+          <div class="form-group">
+            <input id="email" class="form-control" placeholder="Email" th:field="*{email}" required autofocus="autofocus"/>
+          </div>
+          <div class="form-group">
+            <input id="password" class="form-control" type="password" placeholder="Password" th:field="*{password}" required autofocus="autofocus" />
+          </div>
+          <div class="form-group">
+            <input id="psw-repeat" class="form-control"type="password" placeholder="Repeat password" name="psw-repeat" required>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-default">REGISTER</button>
+          </div>
+          <p class="registered">Already registered?  <a href="/" th:href="@{/login}">Login here</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>

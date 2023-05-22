@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface VendorRepository extends JpaRepository<Vendor, Long> {
-    @Query("from Vendor where firstName ilike (:keyWord)")
-    List<Vendor> search(String keyWord);
+//    @Query("from Vendor where firstName ilike :keyWord")
+//    List<Vendor> search(String keyWord);
 }

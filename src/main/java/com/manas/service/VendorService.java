@@ -15,5 +15,5 @@ public interface VendorService {
 
     void update(Long id, Vendor vendor);
 
-    List<Vendor> getAllVendors(String keyWord);
+//    List<Vendor> getAllVendors(String keyWord);
 }

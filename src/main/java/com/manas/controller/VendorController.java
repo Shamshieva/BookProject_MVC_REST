@@ -4,6 +4,7 @@ import com.manas.entity.Vendor;
 import com.manas.service.BookService;
 import com.manas.service.VendorService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,10 +20,16 @@ public class VendorController {
     private final VendorService vendorService;
     private final BookService bookService;
 
+//    @GetMapping
+//    public String getAll(Model model) {
+//        model.addAttribute("vendors", vendorService.getAllVendors());
+//        return "vendor/main";
+//    }
+
     @GetMapping
     public String getAll(@RequestParam(name = "keyWord", required = false) String keyWord, Model model) {
         model.addAttribute("keyWord", keyWord);
-        model.addAttribute("vendors", vendorService.getAllVendors(keyWord));
+        model.addAttribute("vendors", vendorService.getAllVendors());
         return "vendor/main";
     }
 

@@ -1,16 +1,18 @@
 package com.manas.entity;
 
 import com.manas.enums.Role;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.Entity;
 import java.util.Collection;
 import java.util.List;
 
-import static jakarta.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.ALL;
+
 
 @Getter @Setter
 @Entity
@@ -23,8 +25,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
     @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", allocationSize = 1, initialValue = 7)
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String phoneNumber;
     private String email;
     private String password;
