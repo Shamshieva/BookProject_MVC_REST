@@ -22,7 +22,9 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
     private final DefaultUserService userService;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
+    public void onAuthenticationSuccess(HttpServletRequest request,
+                                        HttpServletResponse response,
+                                        Authentication authentication) throws IOException {
         String redirectUrl;
         if (authentication.getPrincipal() instanceof DefaultOAuth2User userDetails) {
             String password = authentication.getCredentials().toString();

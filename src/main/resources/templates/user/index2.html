@@ -1,7 +1,8 @@
 
 <!DOCTYPE html>
 <!--[if IE 7]>
-<html class="ie ie7" lang="en-US">
+<!--<html class="ie ie7" lang="en-US" xmlns:th="http://www.thymeleaf.org">-->
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
 <![endif]-->
 <!--[if IE 8]>
 <html class="ie ie8" lang="en-US">
@@ -100,7 +101,13 @@
         <div id="introduce-container" class="section clear">
           <div id="introduce-wrapper">
             <section class="introduce introduce-border binding col">
-              <h2><a href="/subjects" preload>Vendors</a></h2>
+              <h2>
+                <a th:href="@{/vendors}">
+                  Vendors
+<!--                  <h5 class="card-title" th:text="${vendor.getFirstName() }"></h5>-->
+                </a>
+<!--                <a href="/subjects" preload>Vendors</a>-->
+              </h2>
               <p>Click this to see vendors</p>
             </section>
             <section class="introduce binding introduce-border col">

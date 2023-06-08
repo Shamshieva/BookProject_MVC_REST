@@ -173,7 +173,7 @@
     <div style="text-align:center;" th:each="vendor : ${vendors}">
         <div class="col">
             <div class="card">
-                <img th:src="*{vendor.getImage()}" class="card-img-top" alt="Hospital's image" src="">
+                <img th:src="*{vendor.getImage()}" class="card-img-top" alt="Vendor's image" src="">
                 <div class="card-body">
                     <a th:href="@{/vendors/{id}(id=${vendor.getId()})}">
                         <h5 class="card-title" th:text="${vendor.getFirstName() }"></h5>
