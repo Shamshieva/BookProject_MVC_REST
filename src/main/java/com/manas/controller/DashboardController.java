@@ -28,6 +28,6 @@ public class DashboardController {
             com.manas.entity.User users = userRepository.findByEmail(user.getUsername()).get();
             model.addAttribute("userDetails", users.getName());
         }
-        return "user/index2";
+        return "user/index1";
     }
 }
